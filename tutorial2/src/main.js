@@ -1,10 +1,12 @@
-import "./style.css";
 
 import * as THREE from "three";
-import { OrbitControls } from "/three/examples/jsm/controls/OrbitControls";
+import { OrbitControls } from "/node_modules/three/examples/jsm/controls/OrbitControls";
+
+
 
 const scene = new THREE.Scene();
 
+scene.background = new THREE.Color(0x000000);
 const camera = new THREE.PerspectiveCamera(
   75,
   window.innerWidth / window.innerHeight,
@@ -58,8 +60,8 @@ function addStar() {
 
 Array(200).fill().forEach(addStar);
 
-const spaceTexture = new THREE.TextureLoader().load("space.jpeg");
-scene.background = spaceTexture;
+// const spaceTexture = new THREE.TextureLoader().load("space.jpeg");
+// scene.background = spaceTexture;
 
 function animate() {
   requestAnimationFrame(animate);
